@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   API:
-    image: snj-0.0.1-snapshot.jar
+    image: application_snj
     container_name: snj
     ports:
       - 8080:8080
@@ -12,11 +12,12 @@ services:
       - SPRING_DATASOURCE_PASSWORD=rootpass
       - SPRING_JPA_HIBERNATE_DDL_AUTO=update
     depends_on:
-      - db
+      - mongo
 
-  db:
-    container_name: mongo-dev
-    image: mongo:4.2
+  mongo:
+    container_name: mongodb
+    image: mongo:latest
+    hostname: mongodb
     environment:
       - MONGO_INITDB_ROOT_USERNAME=admin
       - MONGO_INITDB_DATABASE=auth
@@ -32,7 +33,7 @@ services:
     container_name: mongo-express
     image: mongo-express
     depends_on:
-      - db
+      - mongo
     networks:
       - mongo-compose-network
     environment:
