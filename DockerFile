@@ -1,4 +1,0 @@
-FROM openjdk:17
-ADD  out/artifacts/Sauvons_nos_jeunes_association_jar/jar_snj.jar jar_snj.jar
-EXPOSE 8080
-ENTRYPOINT ["java","-jar","jar_snj.jar"]

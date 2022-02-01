@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>Gedev.association</groupId>
 	<artifactId>snj</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1-snapshot</version>
 	<name>snj</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
@@ -54,6 +54,7 @@
 					</excludes>
 				</configuration>
 			</plugin>
+
 		</plugins>
 	</build>
 

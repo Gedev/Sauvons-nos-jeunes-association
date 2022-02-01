@@ -1,7 +1,8 @@
 version: '3.8'
+
 services:
   API:
-    image: jar_snj.jar
+    image: snj-0.0.1-snapshot.jar
     container_name: snj
     ports:
       - 8080:8080
@@ -10,9 +11,6 @@ services:
       - SPRING_DATASOURCE_USERNAME=rootuser
       - SPRING_DATASOURCE_PASSWORD=rootpass
       - SPRING_JPA_HIBERNATE_DDL_AUTO=update
-    build:
-      context: "./"
-      dockerfile: "DockerFile"
     depends_on:
       - db
 
