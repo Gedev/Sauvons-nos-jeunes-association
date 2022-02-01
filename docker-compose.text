@@ -1,5 +1,14 @@
 version: "3.8"
 services:
+  snj:
+    image: Gedev.association/snj:1.0.0
+    container_name: snj
+    depends_on:
+      - mongo
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mongodb://mongodb:8181/snj?useUnicode=true&characterEncoding=utf8&useSSL=false
+    ports:
+      - 8080:8080
   mongodb:
     image: mongo
     container_name: mongodb
